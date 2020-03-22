@@ -1,23 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+
+import { WasmUser } from "./wasm/wasm-user";
+import { WasmWorkerUser } from "./wasm/wasm-user-worker";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Trying Web Workers and Web Assembly</h1>
+        <div style={{ display: "flex" }}>
+          <WasmUser />
+          <WasmWorkerUser />
+        </div>
       </header>
     </div>
   );
