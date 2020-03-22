@@ -3,7 +3,7 @@ import { Card } from "../components/card";
 import { Button } from "../components/button";
 import { WithUps } from "../components/with-ups";
 
-import Worker from "./wasm-worker.worker.js";
+import Worker from "./wasm-worker.worker";
 
 const myWorker = new Worker();
 
@@ -11,7 +11,7 @@ export const WasmWorkerUser = () => {
   const [value, setValue] = useState(0);
 
   useEffect(() => {
-    myWorker.onmessage = (message) => setValue(message.data);
+    myWorker.onmessage = message => setValue(message.data);
   }, []);
 
   const increment = () => {
